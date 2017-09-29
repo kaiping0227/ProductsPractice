@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		158BDDA21F7E20A800ABD6D2 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BDDA11F7E20A800ABD6D2 /* Key.swift */; };
+		158BDDA41F7E243B00ABD6D2 /* extensionURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BDDA31F7E243B00ABD6D2 /* extensionURL.swift */; };
+		15FC85951F7CE4CF0025AF20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC85941F7CE4CF0025AF20 /* AppDelegate.swift */; };
+		15FC859A1F7CE4CF0025AF20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15FC85981F7CE4CF0025AF20 /* Main.storyboard */; };
+		15FC859C1F7CE4CF0025AF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15FC859B1F7CE4CF0025AF20 /* Assets.xcassets */; };
+		15FC859F1F7CE4CF0025AF20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15FC859D1F7CE4CF0025AF20 /* LaunchScreen.storyboard */; };
+		15FC85A71F7CE4F00025AF20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC85A61F7CE4F00025AF20 /* MainViewController.swift */; };
+		15FC85A91F7CE5390025AF20 /* FetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC85A81F7CE5390025AF20 /* FetchManager.swift */; };
+		8CD493EFAEE972A38397BF44 /* Pods_GoodLifeCodePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A754D30F7DBF6DF277740A /* Pods_GoodLifeCodePractice.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		158BDDA11F7E20A800ABD6D2 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		158BDDA31F7E243B00ABD6D2 /* extensionURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionURL.swift; sourceTree = "<group>"; };
+		15FC85911F7CE4CF0025AF20 /* GoodLifeCodePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodLifeCodePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15FC85941F7CE4CF0025AF20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		15FC85991F7CE4CF0025AF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		15FC859B1F7CE4CF0025AF20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15FC859E1F7CE4CF0025AF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		15FC85A01F7CE4CF0025AF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15FC85A61F7CE4F00025AF20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		15FC85A81F7CE5390025AF20 /* FetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchManager.swift; sourceTree = "<group>"; };
+		A0A754D30F7DBF6DF277740A /* Pods_GoodLifeCodePractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodLifeCodePractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE51A2E0E3381157A411D363 /* Pods-GoodLifeCodePractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodLifeCodePractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodLifeCodePractice/Pods-GoodLifeCodePractice.release.xcconfig"; sourceTree = "<group>"; };
+		CAD1168171E4949FB2CB96A4 /* Pods-GoodLifeCodePractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodLifeCodePractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodLifeCodePractice/Pods-GoodLifeCodePractice.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15FC858E1F7CE4CF0025AF20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CD493EFAEE972A38397BF44 /* Pods_GoodLifeCodePractice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15FC85881F7CE4CF0025AF20 = {
+			isa = PBXGroup;
+			children = (
+				15FC85931F7CE4CF0025AF20 /* GoodLifeCodePractice */,
+				15FC85921F7CE4CF0025AF20 /* Products */,
+				9B93B14E72CD707F68D71EF7 /* Pods */,
+				BCB688D08FB4A9F7CEA004A1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		15FC85921F7CE4CF0025AF20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15FC85911F7CE4CF0025AF20 /* GoodLifeCodePractice.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15FC85931F7CE4CF0025AF20 /* GoodLifeCodePractice */ = {
+			isa = PBXGroup;
+			children = (
+				15FC85941F7CE4CF0025AF20 /* AppDelegate.swift */,
+				15FC85A61F7CE4F00025AF20 /* MainViewController.swift */,
+				158BDDA31F7E243B00ABD6D2 /* extensionURL.swift */,
+				15FC85A81F7CE5390025AF20 /* FetchManager.swift */,
+				158BDDA11F7E20A800ABD6D2 /* Key.swift */,
+				15FC85981F7CE4CF0025AF20 /* Main.storyboard */,
+				15FC859B1F7CE4CF0025AF20 /* Assets.xcassets */,
+				15FC859D1F7CE4CF0025AF20 /* LaunchScreen.storyboard */,
+				15FC85A01F7CE4CF0025AF20 /* Info.plist */,
+			);
+			path = GoodLifeCodePractice;
+			sourceTree = "<group>";
+		};
+		9B93B14E72CD707F68D71EF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAD1168171E4949FB2CB96A4 /* Pods-GoodLifeCodePractice.debug.xcconfig */,
+				BE51A2E0E3381157A411D363 /* Pods-GoodLifeCodePractice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BCB688D08FB4A9F7CEA004A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0A754D30F7DBF6DF277740A /* Pods_GoodLifeCodePractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15FC85901F7CE4CF0025AF20 /* GoodLifeCodePractice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15FC85A31F7CE4CF0025AF20 /* Build configuration list for PBXNativeTarget "GoodLifeCodePractice" */;
+			buildPhases = (
+				C7564C4A5961CBA88CA2DA0B /* [CP] Check Pods Manifest.lock */,
+				15FC858D1F7CE4CF0025AF20 /* Sources */,
+				15FC858E1F7CE4CF0025AF20 /* Frameworks */,
+				15FC858F1F7CE4CF0025AF20 /* Resources */,
+				FC508CABAA94F3C3B0C4D836 /* [CP] Embed Pods Frameworks */,
+				21BFC2833D725AB8A7DC2D20 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoodLifeCodePractice;
+			productName = GoodLifeCodePractice;
+			productReference = 15FC85911F7CE4CF0025AF20 /* GoodLifeCodePractice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15FC85891F7CE4CF0025AF20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Francis Tseng";
+				TargetAttributes = {
+					15FC85901F7CE4CF0025AF20 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 15FC858C1F7CE4CF0025AF20 /* Build configuration list for PBXProject "GoodLifeCodePractice" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 15FC85881F7CE4CF0025AF20;
+			productRefGroup = 15FC85921F7CE4CF0025AF20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15FC85901F7CE4CF0025AF20 /* GoodLifeCodePractice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15FC858F1F7CE4CF0025AF20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FC859F1F7CE4CF0025AF20 /* LaunchScreen.storyboard in Resources */,
+				15FC859C1F7CE4CF0025AF20 /* Assets.xcassets in Resources */,
+				15FC859A1F7CE4CF0025AF20 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21BFC2833D725AB8A7DC2D20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoodLifeCodePractice/Pods-GoodLifeCodePractice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7564C4A5961CBA88CA2DA0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodLifeCodePractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC508CABAA94F3C3B0C4D836 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoodLifeCodePractice/Pods-GoodLifeCodePractice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoodLifeCodePractice/Pods-GoodLifeCodePractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15FC858D1F7CE4CF0025AF20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FC85951F7CE4CF0025AF20 /* AppDelegate.swift in Sources */,
+				158BDDA21F7E20A800ABD6D2 /* Key.swift in Sources */,
+				15FC85A71F7CE4F00025AF20 /* MainViewController.swift in Sources */,
+				15FC85A91F7CE5390025AF20 /* FetchManager.swift in Sources */,
+				158BDDA41F7E243B00ABD6D2 /* extensionURL.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		15FC85981F7CE4CF0025AF20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15FC85991F7CE4CF0025AF20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		15FC859D1F7CE4CF0025AF20 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15FC859E1F7CE4CF0025AF20 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15FC85A11F7CE4CF0025AF20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		15FC85A21F7CE4CF0025AF20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		15FC85A41F7CE4CF0025AF20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAD1168171E4949FB2CB96A4 /* Pods-GoodLifeCodePractice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78Y9MSJT25;
+				INFOPLIST_FILE = GoodLifeCodePractice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GoodLifeCodePractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		15FC85A51F7CE4CF0025AF20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE51A2E0E3381157A411D363 /* Pods-GoodLifeCodePractice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78Y9MSJT25;
+				INFOPLIST_FILE = GoodLifeCodePractice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GoodLifeCodePractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15FC858C1F7CE4CF0025AF20 /* Build configuration list for PBXProject "GoodLifeCodePractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15FC85A11F7CE4CF0025AF20 /* Debug */,
+				15FC85A21F7CE4CF0025AF20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15FC85A31F7CE4CF0025AF20 /* Build configuration list for PBXNativeTarget "GoodLifeCodePractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15FC85A41F7CE4CF0025AF20 /* Debug */,
+				15FC85A51F7CE4CF0025AF20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15FC85891F7CE4CF0025AF20 /* Project object */;
+}
