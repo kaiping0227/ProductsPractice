@@ -48,11 +48,14 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
         
         guard let requestCode = url.valueOf(queryParamaterName: "code") else { return }
         
-        print(requestCode)
-        
         fetchManager.fetchToken(requestCode)
         
         self.safariViewController!.dismiss(animated: true, completion: nil)
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "ProductsTableViewController")
+        
+        present(mainViewController, animated: true, completion: nil)
     }
 }

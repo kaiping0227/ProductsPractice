@@ -14,7 +14,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        if UserDefaults.standard.value(forKey: "accessToken") != nil {
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let mainViewController = storyboard.instantiateViewController(withIdentifier: "ProductsTableViewController")
+            
+            self.window?.rootViewController = mainViewController
+            
+        } else {
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            
+            self.window?.rootViewController = loginViewController
+        }
+        
         return true
     }
 

@@ -10,11 +10,13 @@
 		158BDDA21F7E20A800ABD6D2 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BDDA11F7E20A800ABD6D2 /* Key.swift */; };
 		158BDDA41F7E243B00ABD6D2 /* extensionURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BDDA31F7E243B00ABD6D2 /* extensionURL.swift */; };
 		158BDDA61F7E32B700ABD6D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BDDA51F7E32B700ABD6D2 /* LoginViewController.swift */; };
+		158BDDB21F7E484800ABD6D2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BDDB11F7E484800ABD6D2 /* Product.swift */; };
+		158BDDB41F7E54FB00ABD6D2 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BDDB31F7E54FB00ABD6D2 /* ProductsTableViewController.swift */; };
+		158BDDB61F7E553400ABD6D2 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BDDB51F7E553400ABD6D2 /* ProductTableViewCell.swift */; };
 		15FC85951F7CE4CF0025AF20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC85941F7CE4CF0025AF20 /* AppDelegate.swift */; };
 		15FC859A1F7CE4CF0025AF20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15FC85981F7CE4CF0025AF20 /* Main.storyboard */; };
 		15FC859C1F7CE4CF0025AF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15FC859B1F7CE4CF0025AF20 /* Assets.xcassets */; };
 		15FC859F1F7CE4CF0025AF20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15FC859D1F7CE4CF0025AF20 /* LaunchScreen.storyboard */; };
-		15FC85A71F7CE4F00025AF20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC85A61F7CE4F00025AF20 /* MainViewController.swift */; };
 		15FC85A91F7CE5390025AF20 /* FetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC85A81F7CE5390025AF20 /* FetchManager.swift */; };
 		8CD493EFAEE972A38397BF44 /* Pods_GoodLifeCodePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A754D30F7DBF6DF277740A /* Pods_GoodLifeCodePractice.framework */; };
 /* End PBXBuildFile section */
@@ -23,13 +25,15 @@
 		158BDDA11F7E20A800ABD6D2 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		158BDDA31F7E243B00ABD6D2 /* extensionURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionURL.swift; sourceTree = "<group>"; };
 		158BDDA51F7E32B700ABD6D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		158BDDB11F7E484800ABD6D2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		158BDDB31F7E54FB00ABD6D2 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		158BDDB51F7E553400ABD6D2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		15FC85911F7CE4CF0025AF20 /* GoodLifeCodePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodLifeCodePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FC85941F7CE4CF0025AF20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15FC85991F7CE4CF0025AF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15FC859B1F7CE4CF0025AF20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15FC859E1F7CE4CF0025AF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15FC85A01F7CE4CF0025AF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15FC85A61F7CE4F00025AF20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		15FC85A81F7CE5390025AF20 /* FetchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchManager.swift; sourceTree = "<group>"; };
 		A0A754D30F7DBF6DF277740A /* Pods_GoodLifeCodePractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodLifeCodePractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE51A2E0E3381157A411D363 /* Pods-GoodLifeCodePractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodLifeCodePractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodLifeCodePractice/Pods-GoodLifeCodePractice.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,10 +74,12 @@
 			isa = PBXGroup;
 			children = (
 				15FC85941F7CE4CF0025AF20 /* AppDelegate.swift */,
-				15FC85A61F7CE4F00025AF20 /* MainViewController.swift */,
 				158BDDA51F7E32B700ABD6D2 /* LoginViewController.swift */,
+				158BDDB31F7E54FB00ABD6D2 /* ProductsTableViewController.swift */,
+				158BDDB51F7E553400ABD6D2 /* ProductTableViewCell.swift */,
 				158BDDA31F7E243B00ABD6D2 /* extensionURL.swift */,
 				15FC85A81F7CE5390025AF20 /* FetchManager.swift */,
+				158BDDB11F7E484800ABD6D2 /* Product.swift */,
 				158BDDA11F7E20A800ABD6D2 /* Key.swift */,
 				15FC85981F7CE4CF0025AF20 /* Main.storyboard */,
 				15FC859B1F7CE4CF0025AF20 /* Assets.xcassets */,
@@ -229,10 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158BDDB41F7E54FB00ABD6D2 /* ProductsTableViewController.swift in Sources */,
+				158BDDB61F7E553400ABD6D2 /* ProductTableViewCell.swift in Sources */,
 				158BDDA61F7E32B700ABD6D2 /* LoginViewController.swift in Sources */,
+				158BDDB21F7E484800ABD6D2 /* Product.swift in Sources */,
 				15FC85951F7CE4CF0025AF20 /* AppDelegate.swift in Sources */,
 				158BDDA21F7E20A800ABD6D2 /* Key.swift in Sources */,
-				15FC85A71F7CE4F00025AF20 /* MainViewController.swift in Sources */,
 				15FC85A91F7CE5390025AF20 /* FetchManager.swift in Sources */,
 				158BDDA41F7E243B00ABD6D2 /* extensionURL.swift in Sources */,
 			);
