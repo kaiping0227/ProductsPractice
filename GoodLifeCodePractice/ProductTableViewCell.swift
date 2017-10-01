@@ -20,6 +20,8 @@ class ProductTableViewCell: UITableViewCell {
     
     @IBOutlet weak var productImageView: UIImageView!
     
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

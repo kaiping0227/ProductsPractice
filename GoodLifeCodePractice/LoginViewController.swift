@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "ProductsTableViewController")
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "ProductsNaviTableViewController")
         
         present(mainViewController, animated: true, completion: nil)
     }

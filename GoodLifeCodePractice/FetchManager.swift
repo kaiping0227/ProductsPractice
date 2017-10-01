@@ -156,7 +156,7 @@ class FetchManager {
         
     }
     
-    func getProduct(_ id: String) {
+    func getProduct(_ id: Int) {
         
         var singleProduct: Product?
         
@@ -224,76 +224,50 @@ class FetchManager {
         
     }
     
-    func addToFavoriteList(_ id: String) {
-        
-        let parameters = [
-            "topic_id": id,
-            "key": apiKey,
-        ]
-        
-        guard let url = URL(string: "http://api.igoodtravel.com/buy/notes") else { return }
+    func addToFavoriteList(_ id: Int) {
+
+        guard let url = URL(string: "http://api.igoodtravel.com/buy/notes?topic_id=\(id)&key=\(apiKey)") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        let token = UserDefaults.standard.string(forKey: "accessToken")!
         
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
         URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
-            guard error == nil else {
-                return
-            }
+            guard error == nil else { return }
             
-            guard let data = data else {
-                return
-            }
+            guard let data = data else { return }
             
-            print(data)
+            if let httpResponse = response as? HTTPURLResponse {
+                
+                print(httpResponse)
+                
+            }
             
         }).resume()
-        
     }
     
-    func deleteFromFavoriteList(_ id: String) {
+    func deleteFromFavoriteList(_ id: Int) {
         
-        let parameters = [
-            "topic_id": id,
-            "key": apiKey,
-            ]
-        
-        guard let url = URL(string: "http://api.igoodtravel.com/buy/notes") else { return }
+        guard let url = URL(string: "http://api.igoodtravel.com/buy/notes?topic_id=\(id)&key=\(apiKey)") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        let token = UserDefaults.standard.string(forKey: "accessToken")!
         
-        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
-            guard error == nil else {
-                return
-            }
+            guard error == nil else { return }
             
-            guard let data = data else {
-                return
-            }
-            
-            print(data)
+            guard let data = data else { return }
             
         }).resume()
-        
     }
     
     func getFavoriteList() {
@@ -301,17 +275,14 @@ class FetchManager {
         var favoriteProducts = [Product]()
         
         guard let url = URL(string: "http://api.igoodtravel.com/buy/notes/index_of_topic?api_version=\(apiVersion)&key=\(apiKey)&page=\(page)") else { return }
+        
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
-            guard error == nil else {
-                return
-            }
+            guard error == nil else { return }
             
-            guard let data = data else {
-                return
-            }
+            guard let data = data else { return }
             
             do {
                 
@@ -356,6 +327,7 @@ class FetchManager {
                                                      imageOriginalUrl: imageOriginalUrl,
                                                      address: addresses))
                         
+                        self.delegateProducts?.didGet(favoriteProducts)
                     }
                 }
             } catch let error {
