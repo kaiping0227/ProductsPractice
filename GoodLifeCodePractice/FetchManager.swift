@@ -215,7 +215,7 @@ class FetchManager {
                                                 imageOriginalUrl: imageOriginalUrl,
                                                 address: addresses)
                         
-                        
+                        self.delegateProduct?.didGet(singleProduct!)
                 }
             } catch let error {
                 print(error.localizedDescription)
@@ -276,7 +276,11 @@ class FetchManager {
         
         guard let url = URL(string: "http://api.igoodtravel.com/buy/notes/index_of_topic?api_version=\(apiVersion)&key=\(apiKey)&page=\(page)") else { return }
         
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        
+        let token = UserDefaults.standard.object(forKey: "accessToken") as! String
+        print(token)
+        request.allHTTPHeaderFields = ["Authorization": "Bearer \(token)"]
         
         URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
@@ -326,10 +330,58 @@ class FetchManager {
                                                      imageSmallUrl: imageSmallUrl,
                                                      imageOriginalUrl: imageOriginalUrl,
                                                      address: addresses))
-                        
-                        self.delegateProducts?.didGet(favoriteProducts)
                     }
+                    
+                    self.delegateProducts?.didGet(favoriteProducts)
                 }
+            
+            
+//            do {
+//
+//                if let products = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]] {
+//
+//                    for product in products {
+//
+//                        guard let id = product["id"] as? Int else { return }
+//
+//                        guard let companyName = product["company_name"] as? String else { return }
+//
+//                        guard let title = product["title"] as? String else { return }
+//
+//                        guard let salesCount = product["sales_count"] as? Int else { return }
+//
+//                        guard let price = product["price"] as? Double else { return }
+//
+//                        guard let storeName = product["store_name"] as? String? else { return }
+//
+//                        guard let content = product["content"] as? String else { return }
+//
+//                        guard let link = product["link"] as? String else { return }
+//
+//                        guard let imageUrl = product["image"] as? String else { return }
+//
+//                        guard let imageSmallUrl = product["image_small"] as? String else { return }
+//
+//                        guard let imageOriginalUrl = product["image_original"] as? String else { return }
+//
+//                        guard let addresses = product["addresses"] as? [[String: Any]] else { return }
+//
+//                        favoriteProducts.append(Product(id: id,
+//                                                     companyName: companyName,
+//                                                     title: title,
+//                                                     salesCount: salesCount,
+//                                                     price: price,
+//                                                     storeName: storeName,
+//                                                     content: content,
+//                                                     link: link,
+//                                                     imageUrl: imageUrl,
+//                                                     imageSmallUrl: imageSmallUrl,
+//                                                     imageOriginalUrl: imageOriginalUrl,
+//                                                     address: addresses))
+//
+//                        self.delegateProducts?.didGet(favoriteProducts)
+//                    }
+//                }
             } catch let error {
                 print(error.localizedDescription)
             }

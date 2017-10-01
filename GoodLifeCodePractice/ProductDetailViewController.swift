@@ -32,8 +32,10 @@ class ProductDetailViewController: UIViewController, ProductDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         fetchManager.getProduct(productID)
+        
+        fetchManager.delegateProduct = self
         
         setUpNoteButton()
         
