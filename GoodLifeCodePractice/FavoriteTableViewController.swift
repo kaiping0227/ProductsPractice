@@ -13,7 +13,13 @@ class FavoriteTableViewController: UITableViewController, ProductsDelegate {
 
     let fetchManager = FetchManager()
     
-    var products = [Product]()
+    var products = [Product]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,25 @@ class FavoriteTableViewController: UITableViewController, ProductsDelegate {
 
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+        case "toDetail":
+            
+            let cell = sender as! FavoriteTableViewCell
+            
+            let productID = cell.tag
+            
+            let productDetailViewController = segue.destination as! ProductDetailViewController
+            
+            productDetailViewController.productID = productID
+            
+            productDetailViewController.productStatus = .favorite
+            
+        default:
+            break
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

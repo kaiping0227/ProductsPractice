@@ -302,7 +302,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q93-hj-fGY">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q93-hj-fGY">
                                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="250"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="250" id="DvU-3w-x0h"/>
@@ -370,7 +370,7 @@
                                     <outlet property="productSalesCountLabel" destination="J61-16-sMa" id="EP1-WC-7bO"/>
                                     <outlet property="productStoreNameLabel" destination="FD6-wx-MCY" id="Ye8-Vl-JPH"/>
                                     <outlet property="productTitleLabel" destination="XNw-dQ-piZ" id="h1h-jH-hRu"/>
-                                    <segue destination="gCZ-zB-cxP" kind="show" id="fMq-Ob-CzY"/>
+                                    <segue destination="gCZ-zB-cxP" kind="show" identifier="toDetail" id="fMq-Ob-CzY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

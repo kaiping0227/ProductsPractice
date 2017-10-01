@@ -13,7 +13,13 @@ let reuseIdentifier = "ProductTableViewCell"
 
 class ProductsTableViewController: UITableViewController, ProductsDelegate {
 
-    var products = [Product]()
+    var products = [Product]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     let fetchManager = FetchManager()
     
