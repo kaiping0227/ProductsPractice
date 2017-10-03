@@ -16,9 +16,8 @@ class ProductsTableViewController: UITableViewController, ProductsDelegate {
 
     var products = [Product]() {
         didSet {
-//            DispatchQueue.main.async {
+
                 self.tableView.reloadData()
-//            }
         }
     }
     
@@ -28,23 +27,13 @@ class ProductsTableViewController: UITableViewController, ProductsDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        fetchManager.getProductsList(page: self.page)
         
         fetchManager.delegateProducts = self
         
         tableView.addInfiniteScroll { (tableView) in
             
-//            tableView.performBatchUpdates({
+            self.fetchManager.getProductsList(page: self.page)
             
-//                self.page = 1
-            
-                self.fetchManager.getProductsList(page: self.page)
-                
-//            }, completion: { (finished) in
-            
-//                tableView.finishInfiniteScroll()
-//            })
         }
         
     }
@@ -68,14 +57,10 @@ class ProductsTableViewController: UITableViewController, ProductsDelegate {
     }
     
     func didGet(_ products: [Product]) {
-        print("did get products")
-        
+
         DispatchQueue.main.async {
             self.tableView.finishInfiniteScroll()
-            
-            
-            
-            
+
             self.page += 1
             
             self.products += products
