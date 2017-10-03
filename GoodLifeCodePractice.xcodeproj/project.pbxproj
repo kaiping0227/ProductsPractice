@@ -58,6 +58,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15ED66B21F83866500FC43DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				158BDDA51F7E32B700ABD6D2 /* LoginViewController.swift */,
+				158BDDB31F7E54FB00ABD6D2 /* ProductsTableViewController.swift */,
+				15FB86821F80ABD9003D0AF4 /* ProductDetailViewController.swift */,
+				15618C061F7FD9520049A23F /* FavoriteTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		15ED66B31F83866900FC43DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15FC85A81F7CE5390025AF20 /* FetchManager.swift */,
+				158BDDB11F7E484800ABD6D2 /* Product.swift */,
+				158BDDA11F7E20A800ABD6D2 /* Key.swift */,
+			);
+			name = Model;
+			path = "New Group/Model";
+			sourceTree = "<group>";
+		};
+		15ED66B41F83866B00FC43DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				158BDDB51F7E553400ABD6D2 /* ProductTableViewCell.swift */,
+				15618C081F7FD9690049A23F /* FavoriteTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15ED66B51F8386A600FC43DC /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				158BDDA31F7E243B00ABD6D2 /* extensionURL.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		15FC85881F7CE4CF0025AF20 = {
 			isa = PBXGroup;
 			children = (
@@ -80,16 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				15FC85941F7CE4CF0025AF20 /* AppDelegate.swift */,
-				158BDDA51F7E32B700ABD6D2 /* LoginViewController.swift */,
-				158BDDB31F7E54FB00ABD6D2 /* ProductsTableViewController.swift */,
-				158BDDB51F7E553400ABD6D2 /* ProductTableViewCell.swift */,
-				15FB86821F80ABD9003D0AF4 /* ProductDetailViewController.swift */,
-				15618C061F7FD9520049A23F /* FavoriteTableViewController.swift */,
-				15618C081F7FD9690049A23F /* FavoriteTableViewCell.swift */,
-				158BDDA31F7E243B00ABD6D2 /* extensionURL.swift */,
-				15FC85A81F7CE5390025AF20 /* FetchManager.swift */,
-				158BDDB11F7E484800ABD6D2 /* Product.swift */,
-				158BDDA11F7E20A800ABD6D2 /* Key.swift */,
+				15ED66B31F83866900FC43DC /* Model */,
+				15ED66B41F83866B00FC43DC /* View */,
+				15ED66B21F83866500FC43DC /* Controller */,
+				15ED66B51F8386A600FC43DC /* extension */,
 				15FC85981F7CE4CF0025AF20 /* Main.storyboard */,
 				15FC859B1F7CE4CF0025AF20 /* Assets.xcassets */,
 				15FC859D1F7CE4CF0025AF20 /* LaunchScreen.storyboard */,
