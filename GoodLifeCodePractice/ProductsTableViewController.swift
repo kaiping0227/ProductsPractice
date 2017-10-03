@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import UIScrollView_InfiniteScroll
 
 let reuseIdentifier = "ProductTableViewCell"
 
@@ -21,16 +22,42 @@ class ProductsTableViewController: UITableViewController, ProductsDelegate {
         }
     }
     
+    var page: Int = 1
+    
     let fetchManager = FetchManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchManager.getProductsList()
+//        fetchManager.getProductsList(page: self.page)
         
         fetchManager.delegateProducts = self
         
+        tableView.addInfiniteScroll { (tableView) in
+            
+            tableView.performBatchUpdates({
+                
+                self.page += 1
+                
+                self.fetchManager.getProductsList(page: self.page)
+                
+            }, completion: { (finished) in
+                
+                tableView.finishInfiniteScroll()
+            })
+        }
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        products = []
+        
+        fetchManager.getProductsList(page: self.page)
+        
+    }
+    
     @IBAction func favoritesButtonPressed(_ sender: UIButton) {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -41,11 +68,8 @@ class ProductsTableViewController: UITableViewController, ProductsDelegate {
     }
     
     func didGet(_ products: [Product]) {
-        self.products = products
         
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        self.products += products
     }
     
     @IBAction func signoutButtonPressed(_ sender: UIButton) {
@@ -88,13 +112,12 @@ class ProductsTableViewController: UITableViewController, ProductsDelegate {
 
             cell.productTitleLabel.text = self.products[indexPath.row].title
             
-            cell.productPriceLabel.text = self.products[indexPath.row].price.description
+            cell.productPriceLabel.text = "$ " + self.products[indexPath.row].price.description
             
             cell.productStoreNameLabel.text = self.products[indexPath.row].storeName
             
             cell.productSalesCount.text = "Sold " + self.products[indexPath.row].salesCount.description
             
-            cell.productImageView.sd_showActivityIndicatorView()
             cell.productImageView.sd_setImage(with: URL(string: self.products[indexPath.row].imageUrl), completed: nil)
             cell.productImageView.contentMode = .scaleAspectFill
             

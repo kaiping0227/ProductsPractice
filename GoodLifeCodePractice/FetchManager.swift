@@ -84,7 +84,7 @@ class FetchManager {
         }).resume()
     }
     
-    func getProductsList() {
+    func getProductsList(page: Int) {
         
         var totalProducts = [Product]()
         
@@ -107,48 +107,49 @@ class FetchManager {
                     
                     for product in products {
                         
-                        let id = product["id"] as! Int
+                        guard let id = product["id"] as? Int else { return }
                         
-                        let companyName = product["company_name"] as! String
+                        guard let companyName = product["company_name"] as? String else { return }
                         
-                        let title = product["title"] as! String
+                        guard let title = product["title"] as? String else { return }
                         
-                        let salesCount = product["sales_count"] as! Int
+                        guard let salesCount = product["sales_count"] as? Int else { return }
                         
-                        let price = product["price"] as! Double
+                        guard let price = product["price"] as? Double else { return }
                         
-                        let storeName = product["store_name"] as! String?
+                        guard let storeName = product["store_name"] as? String? else { return }
                         
-                        let content = product["content"] as! String
+                        guard let content = product["content"] as? String else { return }
                         
-                        let link = product["link"] as! String
+                        guard let link = product["link"] as? String else { return }
                         
-                        let imageUrl = product["image"] as! String
+                        guard let imageUrl = product["image"] as? String else { return }
                         
-                        let imageSmallUrl = product["image_small"] as! String
+                        guard let imageSmallUrl = product["image_small"] as? String else { return }
                         
-                        let imageOriginalUrl = product["image_original"] as! String
+                        guard let imageOriginalUrl = product["image_original"] as? String else { return }
                         
-                        let addresses = product["addresses"] as! [[String: Any]]
-
+                        guard let addresses = product["addresses"] as? [[String: Any]] else { return }
+                        
                         totalProducts.append(Product(id: id,
-                                                     companyName: companyName,
-                                                     title: title,
-                                                     salesCount: salesCount,
-                                                     price: price,
-                                                     storeName: storeName,
-                                                     content: content,
-                                                     link: link,
-                                                     imageUrl: imageUrl,
-                                                     imageSmallUrl: imageSmallUrl,
-                                                     imageOriginalUrl: imageOriginalUrl,
-                                                     address: addresses))
-                        
+                                                        companyName: companyName,
+                                                        title: title,
+                                                        salesCount: salesCount,
+                                                        price: price,
+                                                        storeName: storeName,
+                                                        content: content,
+                                                        link: link,
+                                                        imageUrl: imageUrl,
+                                                        imageSmallUrl: imageSmallUrl,
+                                                        imageOriginalUrl: imageOriginalUrl,
+                                                        address: addresses))
                     }
                     
                     self.delegateProducts?.didGet(totalProducts)
                     
                 }
+                
+            
             } catch let error {
                 print(error.localizedDescription)
             }
@@ -214,7 +215,7 @@ class FetchManager {
                                                 imageSmallUrl: imageSmallUrl,
                                                 imageOriginalUrl: imageOriginalUrl,
                                                 address: addresses)
-                        
+                    
                         self.delegateProduct?.didGet(singleProduct!)
                 }
             } catch let error {
@@ -270,7 +271,7 @@ class FetchManager {
         }).resume()
     }
     
-    func getFavoriteList() {
+    func getFavoriteList(page: Int) {
         
         var favoriteProducts = [Product]()
         
@@ -288,36 +289,84 @@ class FetchManager {
             
             guard let data = data else { return }
             
+//            do {
+//                
+//                if let products = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]] {
+//                    
+//                    for product in products {
+//                        
+//                        let id = product["id"] as! Int
+//                        
+//                        let companyName = product["company_name"] as! String
+//                        
+//                        let title = product["title"] as! String
+//                        
+//                        let salesCount = product["sales_count"] as! Int
+//                        
+//                        let price = product["price"] as! Double
+//                        
+//                        let storeName = product["store_name"] as! String?
+//                        
+//                        let content = product["content"] as! String
+//                        
+//                        let link = product["link"] as! String
+//                        
+//                        let imageUrl = product["image"] as! String
+//                        
+//                        let imageSmallUrl = product["image_small"] as! String
+//                        
+//                        let imageOriginalUrl = product["image_original"] as! String
+//                        
+//                        let addresses = product["addresses"] as! [[String: Any]]
+//                        
+//                        favoriteProducts.append(Product(id: id,
+//                                                     companyName: companyName,
+//                                                     title: title,
+//                                                     salesCount: salesCount,
+//                                                     price: price,
+//                                                     storeName: storeName,
+//                                                     content: content,
+//                                                     link: link,
+//                                                     imageUrl: imageUrl,
+//                                                     imageSmallUrl: imageSmallUrl,
+//                                                     imageOriginalUrl: imageOriginalUrl,
+//                                                     address: addresses))
+//                    }
+//                    
+//                    self.delegateProducts?.didGet(favoriteProducts)
+//                }
+            
+            
             do {
-                
+
                 if let products = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]] {
-                    
+
                     for product in products {
-                        
-                        let id = product["id"] as! Int
-                        
-                        let companyName = product["company_name"] as! String
-                        
-                        let title = product["title"] as! String
-                        
-                        let salesCount = product["sales_count"] as! Int
-                        
-                        let price = product["price"] as! Double
-                        
-                        let storeName = product["store_name"] as! String?
-                        
-                        let content = product["content"] as! String
-                        
-                        let link = product["link"] as! String
-                        
-                        let imageUrl = product["image"] as! String
-                        
-                        let imageSmallUrl = product["image_small"] as! String
-                        
-                        let imageOriginalUrl = product["image_original"] as! String
-                        
-                        let addresses = product["addresses"] as! [[String: Any]]
-                        
+
+                        guard let id = product["id"] as? Int else { return }
+
+                        guard let companyName = product["company_name"] as? String else { return }
+
+                        guard let title = product["title"] as? String else { return }
+
+                        guard let salesCount = product["sales_count"] as? Int else { return }
+
+                        guard let price = product["price"] as? Double else { return }
+
+                        guard let storeName = product["store_name"] as? String? else { return }
+
+                        guard let content = product["content"] as? String else { return }
+
+                        guard let link = product["link"] as? String else { return }
+
+                        guard let imageUrl = product["image"] as? String else { return }
+
+                        guard let imageSmallUrl = product["image_small"] as? String else { return }
+
+                        guard let imageOriginalUrl = product["image_original"] as? String else { return }
+
+                        guard let addresses = product["addresses"] as? [[String: Any]] else { return }
+
                         favoriteProducts.append(Product(id: id,
                                                      companyName: companyName,
                                                      title: title,
@@ -331,57 +380,9 @@ class FetchManager {
                                                      imageOriginalUrl: imageOriginalUrl,
                                                      address: addresses))
                     }
+                        self.delegateProducts?.didGet(favoriteProducts)
                     
-                    self.delegateProducts?.didGet(favoriteProducts)
                 }
-            
-            
-//            do {
-//
-//                if let products = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]] {
-//
-//                    for product in products {
-//
-//                        guard let id = product["id"] as? Int else { return }
-//
-//                        guard let companyName = product["company_name"] as? String else { return }
-//
-//                        guard let title = product["title"] as? String else { return }
-//
-//                        guard let salesCount = product["sales_count"] as? Int else { return }
-//
-//                        guard let price = product["price"] as? Double else { return }
-//
-//                        guard let storeName = product["store_name"] as? String? else { return }
-//
-//                        guard let content = product["content"] as? String else { return }
-//
-//                        guard let link = product["link"] as? String else { return }
-//
-//                        guard let imageUrl = product["image"] as? String else { return }
-//
-//                        guard let imageSmallUrl = product["image_small"] as? String else { return }
-//
-//                        guard let imageOriginalUrl = product["image_original"] as? String else { return }
-//
-//                        guard let addresses = product["addresses"] as? [[String: Any]] else { return }
-//
-//                        favoriteProducts.append(Product(id: id,
-//                                                     companyName: companyName,
-//                                                     title: title,
-//                                                     salesCount: salesCount,
-//                                                     price: price,
-//                                                     storeName: storeName,
-//                                                     content: content,
-//                                                     link: link,
-//                                                     imageUrl: imageUrl,
-//                                                     imageSmallUrl: imageSmallUrl,
-//                                                     imageOriginalUrl: imageOriginalUrl,
-//                                                     address: addresses))
-//
-//                        self.delegateProducts?.didGet(favoriteProducts)
-//                    }
-//                }
             } catch let error {
                 print(error.localizedDescription)
             }

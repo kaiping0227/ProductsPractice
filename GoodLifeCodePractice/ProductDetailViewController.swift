@@ -80,11 +80,12 @@ class ProductDetailViewController: UIViewController, ProductDelegate {
         
         DispatchQueue.main.async {
             
+            self.productImageView.sd_showActivityIndicatorView()
             self.productImageView.sd_setImage(with: URL(string: product.imageOriginalUrl), completed: nil)
             
             self.titleLabel.text = product.title
             
-            self.priceLabel.text = product.price.description
+            self.priceLabel.text = "$ " + product.price.description
             
             self.salesCountLabel.text = product.salesCount.description
             

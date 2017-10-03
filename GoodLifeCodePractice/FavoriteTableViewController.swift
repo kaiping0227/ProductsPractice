@@ -8,10 +8,13 @@
 
 import UIKit
 import SDWebImage
+import UIScrollView_InfiniteScroll
 
 class FavoriteTableViewController: UITableViewController, ProductsDelegate {
 
     let fetchManager = FetchManager()
+    
+    var page: Int = 1
     
     var products = [Product]() {
         didSet {
@@ -24,9 +27,29 @@ class FavoriteTableViewController: UITableViewController, ProductsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchManager.getFavoriteList()
-        
         fetchManager.delegateProducts = self
+        
+        tableView.addInfiniteScroll { (tableView) in
+            tableView.performBatchUpdates({
+                
+                self.page += 1
+                
+                self.fetchManager.getFavoriteList(page: self.page)
+                
+            }, completion: { (finished) in
+                
+                tableView.finishInfiniteScroll()
+            })
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        products = []
+        
+        fetchManager.getFavoriteList(page: self.page)
         
     }
     
@@ -36,11 +59,7 @@ class FavoriteTableViewController: UITableViewController, ProductsDelegate {
     }
     
     func didGet(_ products: [Product]) {
-        self.products = products
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        self.products += products
 
     }
 
@@ -76,7 +95,7 @@ class FavoriteTableViewController: UITableViewController, ProductsDelegate {
             
             cell.productTitleLabel.text = self.products[indexPath.row].title
             
-            cell.productPriceLabel.text = self.products[indexPath.row].price.description
+            cell.productPriceLabel.text = "$ " + self.products[indexPath.row].price.description
             
             cell.productStoreNameLabel.text = self.products[indexPath.row].storeName
             
@@ -85,9 +104,8 @@ class FavoriteTableViewController: UITableViewController, ProductsDelegate {
             cell.productImageView.sd_showActivityIndicatorView()
             cell.productImageView.sd_setImage(with: URL(string: self.products[indexPath.row].imageUrl), completed: nil)
             cell.productImageView.contentMode = .scaleAspectFill
-            
+
             cell.tag = self.products[indexPath.row].id
-            
         }
 
         return cell
